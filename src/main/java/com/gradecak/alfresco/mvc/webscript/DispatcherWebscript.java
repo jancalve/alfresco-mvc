@@ -105,7 +105,6 @@ public class DispatcherWebscript extends AbstractWebScript implements ServletCon
   public void afterPropertiesSet() throws Exception {
 
     RepositoryBootstrapListenerManager listeners = (RepositoryBootstrapListenerManager) applicationContext.getBean("repositoryBootstrapListenerManager");
-    System.out.println("DispatcherWebscript: afterPropertiesSet");
     listeners.addListener(this);
 
   }
@@ -124,8 +123,6 @@ public class DispatcherWebscript extends AbstractWebScript implements ServletCon
 
   @Override
   public void onBootstrapFinishedEvent() {
-
-    System.out.println("DispatcherWebscript: onBootstrapFinishedEvent");
 
     s = new DispatcherServlet() {
 
